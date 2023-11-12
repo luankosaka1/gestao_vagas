@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kosaka.vagas.exceptions.UserFoundException;
-import kosaka.vagas.modules.candidates.Entities.CandidateEntity;
+import kosaka.vagas.modules.candidates.entities.CandidateEntity;
 import kosaka.vagas.modules.candidates.repositories.CandidateRepository;
 
 @Service

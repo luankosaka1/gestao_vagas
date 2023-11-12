@@ -1,0 +1,37 @@
+POST http://localhost:8080/candidate HTTP/1.1
+content-type: application/json
+
+{
+    "name": "User Candidate",
+    "username": "username",
+    "email": "user@email.com",
+    "password": "password",
+    "description": "description",
+    "curriculum": "curriculum"
+}
+
+###
+
+POST http://localhost:8080/company HTTP/1.1
+content-type: application/json
+
+{
+    "name": "User Company",
+    "username": "user.company",
+    "email": "company@email.com",
+    "password": "password",
+    "website": "website",
+    "description": "description"
+}
+
+###
+
+POST http://localhost:8080/company/job HTTP/1.1
+Content-Type: application/json
+
+{
+    "company_id": "e5cd1842-c849-44f5-ba99-bf36ad1273f4",
+    "description": "description",
+    "benefits": "benefits",
+    "level": "JUNIOR"
+}

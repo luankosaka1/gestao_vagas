@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import kosaka.vagas.modules.candidates.Entities.CandidateEntity;
+import kosaka.vagas.modules.candidates.entities.CandidateEntity;
 
 public interface CandidateRepository extends JpaRepository<CandidateEntity, UUID> {
     public Optional<CandidateEntity> findByUsernameOrEmail(String username, String email);

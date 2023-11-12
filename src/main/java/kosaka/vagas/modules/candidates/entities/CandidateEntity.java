@@ -1,4 +1,4 @@
-package kosaka.vagas.modules.candidates.Entities;
+package kosaka.vagas.modules.candidates.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
