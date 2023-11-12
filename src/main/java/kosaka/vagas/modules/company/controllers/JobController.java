@@ -1,4 +1,4 @@
-package kosaka.vagas.modules.candidates.controllers;
+package kosaka.vagas.modules.company.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-import kosaka.vagas.modules.candidates.Entities.CandidateEntity;
-import kosaka.vagas.modules.candidates.useCases.CreateCandidateUseCase;
+import kosaka.vagas.modules.company.entities.JobEntity;
+import kosaka.vagas.modules.company.useCases.CreateJobUseCase;
 
 @RestController
-@RequestMapping("candidate")
-public class CandidateController {
+@RequestMapping("company/job")
+public class JobController {
     @Autowired
-    private CreateCandidateUseCase createCandidateUseCase;
+    private CreateJobUseCase createJobUseCase;
 
     @PostMapping
-    public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidate) {
+    public ResponseEntity<Object> create(@Valid @RequestBody JobEntity entity) {
         try {
-            CandidateEntity response = this.createCandidateUseCase.execute(candidate);
+            var response = this.createJobUseCase.execute(entity);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-    }    
+    }
 }
