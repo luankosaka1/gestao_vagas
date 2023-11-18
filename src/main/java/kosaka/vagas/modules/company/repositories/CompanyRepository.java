@@ -9,4 +9,5 @@ import kosaka.vagas.modules.company.entities.CompanyEntity;
 
 public interface CompanyRepository extends JpaRepository<CompanyEntity, UUID> {    
     public Optional<CompanyEntity> findByUsernameOrEmail(String username, String email);
+    public Optional<CompanyEntity> findByUsername(String username);
 }
