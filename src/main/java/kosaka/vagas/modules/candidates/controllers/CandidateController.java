@@ -5,6 +5,7 @@ import kosaka.vagas.modules.candidates.dto.ProfileCandidateResponseDTO;
 import kosaka.vagas.modules.candidates.useCases.ProfileCandidateUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ import kosaka.vagas.modules.candidates.useCases.CreateCandidateUseCase;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("candidate")
+@RequestMapping("CANDIDATE")
 public class CandidateController {
     @Autowired
     private CreateCandidateUseCase createCandidateUseCase;
@@ -37,6 +38,7 @@ public class CandidateController {
     }    
 
     @GetMapping
+    @PreAuthorize("hasRole('candidate')")
     public ResponseEntity<Object> get(HttpServletRequest request) {
         var idCandidate = request.getAttribute("candidate");
 
